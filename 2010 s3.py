@@ -30,7 +30,8 @@ def max_dist(houselist, p):
     Output: The maximum distance from a house in houselist to p.
     '''
     return max([dist(house, p) for house in houselist])
-    
+
+# Solves the problem for the one-hydrant case.    
 def one_hydrant(houselist):
     '''
     Input: A sorted list of house addresses (integers).
@@ -71,8 +72,10 @@ houses.sort()
 
 num_hydrants = int(input())
 
+# Split the houses into num_hydrants groups of houses. 
 house_groups = split_houses(houses, num_hydrants)
 
+# Consider the one hydrant case for each group in house_groups, then take the maximum of the hydrant lengths.
 max_hose_length = max([one_hydrant(group) for group in house_groups])
 
 print (max_hose_length)
