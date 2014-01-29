@@ -9,7 +9,7 @@ def move(cur_pos, grid, visited):
     global path_lengths
     num_rows, num_cols = len(grid), len(grid[0])
     r, c = cur_pos[0], cur_pos[1]
-    if r == num_rows - 1 and c == num_cols - 1:
+    if r == num_rows - 1 and c == num_cols - 1 and grid[r][c] != '*':
         path_lengths.append(len(visited))
     else:
         possible_next_moves = []
